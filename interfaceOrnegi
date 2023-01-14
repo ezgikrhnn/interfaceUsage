@@ -1,0 +1,73 @@
+
+import org.w3c.dom.ls.LSOutput;
+
+import javax.swing.plaf.multi.MultiSliderUI;
+import java.util.ArrayList;
+
+public interfaceOrnegi {
+    public static void main(String[] args) {
+       PopSarkiciOzellikleri popSarkici1 = new Tarkan();
+       PopSarkiciOzellikleri popSarkici2 = new Hadise();
+
+       PopSarkiciOzellikleri dizi[] = new PopSarkiciOzellikleri[5];
+       dizi[0] = popSarkici1;
+       dizi[1] = popSarkici2;
+
+        ArrayList<PopSarkiciOzellikleri> sarkicilar = new ArrayList<>();
+        sarkicilar.add(popSarkici1);
+        sarkicilar.add(popSarkici2);
+    }
+
+}
+
+abstract class Sarkici{
+    abstract void sarkiSoyle();
+}
+
+interface ArabeskSarkiciOzellikleri{
+    void sahnedeSigaraIc();
+}
+
+interface PopSarkiciOzellikleri{
+    void SahnedeDansEt();
+    
+}
+
+class Tarkan implements PopSarkiciOzellikleri{
+    @Override
+    public void SahnedeDansEt() {
+    }
+}
+
+class Hadise implements PopSarkiciOzellikleri{
+    @Override
+    public void SahnedeDansEt() {
+    }
+}
+
+
+
+class ArabeskSarkici extends Sarkici{
+    @Override
+    void sarkiSoyle() {
+        System.out.println("arabesk sarkicisi sarki soyluyor.");
+    }
+}
+
+class PopSarkici extends Sarkici{
+    @Override
+    void sarkiSoyle() {
+        System.out.println("pop sarkicisi sarki soyluyor");
+    }
+}
+
+class MuslumBaba implements ArabeskSarkiciOzellikleri, PopSarkiciOzellikleri{  //muslumbaba hem pop hem arabesk sarkici uyesidir.
+
+    @Override
+    public void sahnedeSigaraIc() {
+    }
+
+    @Override
+    public void SahnedeDansEt() {
+    }
+}
